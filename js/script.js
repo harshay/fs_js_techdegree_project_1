@@ -11,6 +11,36 @@ project 1 - A Random Quote Generator
  * `quotes` array 
 ***/
 
+var quotes = [
+
+    {
+      quote : " ",
+      source : " "
+    },
+    {
+      quote : " ",
+      source : " "
+    },
+    {
+      quote : " ",
+      source : " ",
+      citation : " ",
+      year : " "
+    },
+    {
+      quote : " ",
+      source : " "
+    },
+    {
+      quote : " ",
+      source : " "
+    }
+
+
+
+
+
+]
 
 
 /***
