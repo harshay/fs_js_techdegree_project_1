@@ -1,5 +1,5 @@
 /******************************************
-Treehouse FSJS Techdegree:
+FSJS Techdegree:
 project 1 - A Random Quote Generator
 Creator Name - Harshay Raipancholi
 Created Date - 7/12/2019
@@ -56,8 +56,13 @@ var getRandomQuote = function() {
  * `printQuote` function
 ***/
 var printQuote = function() {
+
+  var randnum = getRandomQuote();
+
   document.getElementById('quote-box').innerHTML
-   =   '<p class="quote">' +   quotes[getRandomQuote()][1]   + '';
+   =  '<p class="quote">'  +  quotes[randnum].quote  +  '</p>'
+   '<p class="source">' + quotes[randnum].source + '<span class="citation">'+ 'Twitter' + '</span><span class="year">' + '2016' + '</span></p>';
+
 };
 
 
