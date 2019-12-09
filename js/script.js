@@ -45,9 +45,11 @@ var quotes = [
  * `getRandomQuote` function
 ***/
 var getRandomQuote = function() {
-  var randomNumber = math.floor(math.random()*6) + 1;
+  var randomNumber = Math.floor(Math.random()*5);
   
-  return randomNumber; 
+  var selectedquote = quotes[randomNumber]
+
+  return selectedquote; 
 
 };
 
@@ -60,8 +62,8 @@ var printQuote = function() {
   var randnum = getRandomQuote();
 
   document.getElementById('quote-box').innerHTML
-   =  '<p class="quote">'  +  quotes[randnum].quote  +  '</p>'
-   '<p class="source">' + quotes[randnum].source + '<span class="citation">'+ 'Twitter' + '</span><span class="year">' + '2016' + '</span></p>';
+   =  '<p class="quote">'  +  selectedquote.quote  +  '</p>' +
+   '<p class="source">' + selectedquote.source + '<span class="citation">'+ 'Twitter' + '</span><span class="year">' + '2016' + '</span></p>';
 
 };
 
