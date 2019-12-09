@@ -62,8 +62,8 @@ var printQuote = function() {
   var randnum = getRandomQuote();
 
   document.getElementById('quote-box').innerHTML
-   =  '<p class="quote">'  +  selectedquote.quote  +  '</p>' +
-   '<p class="source">' + selectedquote.source + '<span class="citation">'+ 'Twitter' + '</span><span class="year">' + '2016' + '</span></p>';
+   =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
+   '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ 'Twitter' + '</span><span class="year">' + '2016' + '</span></p>';
 
 };
 
