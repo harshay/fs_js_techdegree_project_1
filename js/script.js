@@ -64,19 +64,29 @@ var printQuote = function() {
   if (getRandomQuote().citation !== 'undefined' && getRandomQuote().year !== 'undefined') {
 
   document.getElementById('quote-box').innerHTML
+
    =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
-   '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ getRandomQuote().citation + '</span><span class="year">' + getRandomQuote().year + '</span></p>';
+      '<p class="source">' + getRandomQuote().source + 
+      '<span class="citation">'+ getRandomQuote().citation + 
+      '</span><span class="year">' + getRandomQuote().year + '</span></p>';
   }
   else if (getRandomQuote().citation !== 'undefined' && getRandomQuote().writer !== 'undefined') {
     
     document.getElementById('quote-box').innerHTML
+
      =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
-     '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ getRandomQuote().citation + '</span><span class="year">' + getRandomQuote().writer + '</span></p>';
+        '<p class="source">' + getRandomQuote().source + 
+        '<span class="citation">'+ getRandomQuote().citation + 
+        '</span><span class="year">' + getRandomQuote().writer + '</span></p>';
     }
   else {
+
     document.getElementById('quote-box').innerHTML
+
     =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
-    '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ '' + '</span><span class="year">' + '' + '</span></p>';
+       '<p class="source">' + getRandomQuote().source + 
+       '<span class="citation">'+ '' + 
+       '</span><span class="year">' + '' + '</span></p>';
    
 
   }
