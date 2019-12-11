@@ -47,7 +47,7 @@ var quotes = [
 var getRandomQuote = function() {
 
   var randomNumber = Math.floor(Math.random()*5);  
-  var selectedquote = quotes[randomNumber]
+  var selectedquote = quotes[randomNumber];
 
   return selectedquote; 
 
