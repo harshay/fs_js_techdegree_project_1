@@ -23,15 +23,15 @@ var quotes = [
     },
     {
       quote : " When I left you, I was but the learner. Now I am the master.",
-      source : "Darth Vader"/*,
+      source : "Darth Vader",
       citation : "Star Wars Episode IV: A New Hope",
-      year : "1977"*/
+      year : "1977"
     },
     {
       quote : "People don’t buy stock; it gets sold to them. Don’t ever forget that. ",
-      source : "Jordan Belfort"/*,
+      source : "Jordan Belfort",
       citation : "Wolf of Wall Street",
-      writer : "Terence Winter"*/
+      writer : "Terence Winter"
     },
     {
       quote : "In the end, it's not the years in your life that count. It's the life in your years.",
@@ -45,8 +45,8 @@ var quotes = [
  * `getRandomQuote` function
 ***/
 var getRandomQuote = function() {
-  var randomNumber = Math.floor(Math.random()*5);
-  
+
+  var randomNumber = Math.floor(Math.random()*5);  
   var selectedquote = quotes[randomNumber]
 
   return selectedquote; 
@@ -61,9 +61,25 @@ var printQuote = function() {
 
   var randnum = getRandomQuote();
 
+  if (getRandomQuote().citation !== 'undefined' && getRandomQuote().year !== 'undefined') {
+
   document.getElementById('quote-box').innerHTML
    =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
-   '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ 'Twitter' + '</span><span class="year">' + '2016' + '</span></p>';
+   '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ getRandomQuote().citation + '</span><span class="year">' + getRandomQuote().year + '</span></p>';
+  }
+  else if (getRandomQuote().citation !== 'undefined' && getRandomQuote().writer !== 'undefined') {
+    
+    document.getElementById('quote-box').innerHTML
+     =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
+     '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ getRandomQuote().citation + '</span><span class="year">' + getRandomQuote().writer + '</span></p>';
+    }
+  else {
+    document.getElementById('quote-box').innerHTML
+    =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
+    '<p class="source">' + getRandomQuote().source + '<span class="citation">'+ '' + '</span><span class="year">' + '' + '</span></p>';
+   
+
+  }
 
 };
 
