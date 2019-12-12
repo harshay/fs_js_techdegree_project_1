@@ -46,7 +46,9 @@ var quotes = [
 ];
 
 /********************************************************************************************************/
-
+/*
+colours array
+*/
 var colours = ["red","green","blue","purple", "orange"];
 
 
@@ -129,7 +131,7 @@ var printQuote = function() {
 
 /********************************************************************************************************/
 /*
-run print quote function every 5 seconds
+run print quote function every 6 seconds
 */
 
 setInterval(printQuote,6000);
