@@ -6,6 +6,11 @@ Created Date - 7/12/2019
 Creator Contact - harshaykr@hotmail.com
 ******************************************/
 
+/******************************************************************************************** */
+
+
+/*Assign Random Number*/
+var randomNumber = Math.floor(Math.random()*5);  
 
 /*** 
  * `quotes` array 
@@ -38,55 +43,83 @@ var quotes = [
       source : "Abraham Lincoln"
     }
 
-]
+];
+
+/********************************************************************************************************/
+
+var colours = ["red","green","blue","purple", "orange"];
 
 
+/********************************************************************************************************/
 /***
  * `getRandomQuote` function
 ***/
 var getRandomQuote = function() {
-
-  var randomNumber = Math.floor(Math.random()*5);  
-  var selectedquote = quotes[randomNumber];
+  
+var randomNumber = Math.floor(Math.random()*5); 
+var selectedquote = quotes[randomNumber];
 
   return selectedquote; 
+  
 
 };
 
+
+/********************************************************************************************************/
+
+/***
+ * `getRandomColour` function
+***/
+var getRandomColour = function() {
+
+  
+var randomNumber = Math.floor(Math.random()*5); 
+var selectedcolour = colours[randomNumber];
+
+
+  return selectedcolour; 
+  
+
+};
+
+
+/********************************************************************************************************/
 
 /***
  * `printQuote` function
 ***/
 var printQuote = function() {
 
-  var randnum = getRandomQuote();
+  var randquote = getRandomQuote();
+
+  console.log(randquote);
+  
+  document.body.style.backgroundColor = getRandomColour();
 
   if (getRandomQuote().citation !== 'undefined' && getRandomQuote().year !== 'undefined') {
 
   document.getElementById('quote-box').innerHTML
 
-   =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
-      '<p class="source">' + getRandomQuote().source + 
-      '<span class="citation">'+ getRandomQuote().citation + 
-      '</span><span class="year">' + getRandomQuote().year + '</span></p>';
+   =  '<p class="quote">'           + randquote.quote      +  '</p>' +
+      '<p class="source">'          + randquote.source     + 
+      '<span class="citation">'     + randquote.citation   + 
+      '</span><span class="year">'  + randquote.year       + '</span></p>';
   }
   else if (getRandomQuote().citation !== 'undefined' && getRandomQuote().writer !== 'undefined') {
     
     document.getElementById('quote-box').innerHTML
 
-     =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
-        '<p class="source">' + getRandomQuote().source + 
-        '<span class="citation">'+ getRandomQuote().citation + 
-        '</span><span class="year">' + getRandomQuote().writer + '</span></p>';
+     =  '<p class="quote">'           + randquote.quote    +  '</p>' +
+        '<p class="source">'          + randquote.source   + 
+        '<span class="citation">'     + randquote.citation + 
+        '</span><span class="year">'  + randquote.writer   + '</span></p>';
     }
   else {
 
     document.getElementById('quote-box').innerHTML
 
-    =  '<p class="quote">'  +  getRandomQuote().quote  +  '</p>' +
-       '<p class="source">' + getRandomQuote().source + 
-       '<span class="citation">'+ '' + 
-       '</span><span class="year">' + '' + '</span></p>';
+    =  '<p class="quote">'  +  randquote.quote  +  '</p>' +
+       '<p class="source">' +  randquote.source  +  '</p>';
    
 
   }
@@ -94,9 +127,18 @@ var printQuote = function() {
 };
 
 
+/********************************************************************************************************/
+/*
+run print quote function every 5 seconds
+*/
+
+setInterval(printQuote,6000);
+
+
+/********************************************************************************************************/
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
-
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+/********************************************************************************************************/
