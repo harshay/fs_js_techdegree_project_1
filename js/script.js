@@ -4,6 +4,7 @@ project 1 - A Random Quote Generator
 Creator Name - Harshay Raipancholi
 Created Date - 7/12/2019
 Creator Contact - harshaykr@hotmail.com
+Scope : Exceeds Expectation Tasks Completed
 ******************************************/
 
 /*********************************************************************************************/
@@ -100,7 +101,7 @@ var printQuote = function() {
   
   document.body.style.backgroundColor = getRandomColour();
 
-  if (getRandomQuote().citation !== 'undefined' && getRandomQuote().year !== 'undefined') {
+  if (randquote.citation !== undefined && randquote.year !== undefined) {
 
   document.getElementById('quote-box').innerHTML
 
@@ -109,7 +110,7 @@ var printQuote = function() {
       '<span class="citation">'     + randquote.citation   + 
       '</span><span class="year">'  + randquote.year       + '</span></p>';
   }
-  else if (getRandomQuote().citation !== 'undefined' && getRandomQuote().writer !== 'undefined') {
+  else if (randquote.citation !== undefined && randquote.writer !== undefined) {
     
     document.getElementById('quote-box').innerHTML
 
@@ -122,7 +123,7 @@ var printQuote = function() {
 
     document.getElementById('quote-box').innerHTML
 
-    =  '<p class="quote">'  +  randquote.quote  +  '</p>' +
+    =  '<p class="quote">'  +  randquote.quote   +  '</p>' +
        '<p class="source">' +  randquote.source  +  '</p>';
    
 
