@@ -4,7 +4,7 @@ project 1 - A Random Quote Generator
 Creator Name - Harshay Raipancholi
 Created Date - 7/12/2019
 Creator Contact - harshaykr@hotmail.com
-Scope : Exceeds Expectation Tasks Completed
+Scope : All Exceeds Expectation Tasks Completed
 ******************************************/
 
 /*********************************************************************************************/
@@ -14,7 +14,8 @@ Scope : Exceeds Expectation Tasks Completed
 var randomNumber = Math.floor(Math.random()*5);  
 
 /***************************************************************  
- * `quotes` array 
+ * `quotes` array ; This section creates an array of objects.
+ * Each quote contains properties relating to a specific quote 
 ****************************************************************/
 
 var quotes = [
@@ -49,7 +50,10 @@ var quotes = [
 /********************************************************************************************************/
 
 /**********************************************************
-colours array
+colours array : This section creates an array containing 
+a list of colours. These are picked up by a function later
+in the script and used to change the background colour
+of the web page
 ***********************************************************/
 var colours = ["red","green","blue","purple", "orange"];
 
@@ -57,7 +61,10 @@ var colours = ["red","green","blue","purple", "orange"];
 /********************************************************************************************************/
 
 /*********************************************************
- * `getRandomQuote` function
+ * `getRandomQuote` function :
+ * This section creates a function which uses the 
+ * random number generated earlier in the script to 
+ * select a quote from the quotes array
 *********************************************************/
 var getRandomQuote = function() {
   
@@ -73,7 +80,10 @@ var selectedquote = quotes[randomNumber];
 /********************************************************************************************************/
 
 /******************************************************
- * `getRandomColour` function
+ * `getRandomColour` function :
+ * This section creates a function which uses the 
+ * random number generated earlier in the script to 
+ * select a colour from the colours array
 *******************************************************/
 var getRandomColour = function() {
 
@@ -92,12 +102,13 @@ var selectedcolour = colours[randomNumber];
 
 /******************************************************
  * `printQuote` function
+ * This section creates a function which uses the object
+ * returned from the getrandomquote function
+ * to change the HTML on the webpage
 *******************************************************/
 var printQuote = function() {
 
   var randquote = getRandomQuote();
-
-  console.log(randquote);
   
   document.body.style.backgroundColor = getRandomColour();
 
@@ -134,7 +145,8 @@ var printQuote = function() {
 /********************************************************************************************************/
 
 /*************************************************
-run print quote function every 6 seconds
+Function will execute the printquote function
+every 6 seconds
 *************************************************/
 
 setInterval(printQuote,6000);
